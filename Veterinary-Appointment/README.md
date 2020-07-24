@@ -1,6 +1,6 @@
 # Citas En Tu Veterinario
 
-This exercise was done during the React course taught by Udemy. Code deployment on [matiassicardi.com/veterinaria](matiassicardi.com/veterinaria)
+This exercise was done during the React course taught by Udemy. Code deployment on [matiassicardi.com/veterinaria](http://matiassicardi.com/veterinaria)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
