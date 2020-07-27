@@ -1,6 +1,6 @@
 # Budget Generator
 
-This exercise was done during the React course taught by Udemy. 
+This exercise was done during the React course taught by Udemy. Please visit the deploy site at [matiassicardi.com/budget-generator/](http://matiassicardi.com/budget-generator/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
