@@ -1,7 +1,9 @@
 import React, { Fragment, useState } from 'react';
 import Error from './Error';
 
-const Pregunta = () => {
+import PropTypes from 'prop-types';
+
+const Pregunta = ({ guardarPresupuesto, guardarRestante, actualizarPregunta }) => {
 
     //definiendo State. Como vamos a tratar cantidades, lo iniciamos con un 'number', en este caso '0'
     const [ cantidad, guardarCantidad ] = useState(0);
@@ -32,6 +34,9 @@ const Pregunta = () => {
         guardarError(false)
 
         //Acciones
+        guardarPresupuesto(cantidad);
+        guardarRestante(cantidad);
+        actualizarPregunta(false);
     }
 
     return (
@@ -57,6 +62,12 @@ const Pregunta = () => {
             </form>
         </Fragment>
     );
+}
+
+Pregunta.propTypes = {
+    guardarPresupuesto: PropTypes.func.isRequired,
+    guardarRestante: PropTypes.func.isRequired,
+    actualizarPregunta: PropTypes.func.isRequired
 }
 
 export default Pregunta;
