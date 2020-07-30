@@ -51,7 +51,7 @@ const TextError = styled.div `
     text-align: center;
 `;
 
-const Formulario = () => {
+const Formulario = ({guardarResumen}) => {
 
     const [ datos, guardarDatos ] = useState({
         marca: '',
@@ -85,7 +85,6 @@ const Formulario = () => {
         guardarError(false);
 
         //Base del costo
-
         let resultado = 2000;
 
         //obtener la diferencia de años
@@ -104,8 +103,13 @@ const Formulario = () => {
         //si es completo aumenta 50%
         const incrementoPlan = obtenerPlan(plan);
         resultado = parseFloat( incrementoPlan * resultado ).toFixed(2);
+        console.log(resultado);
 
         //total
+        guardarResumen({
+            cotizacion: resultado,
+            datos: datos
+        })
     }
 
     return (
