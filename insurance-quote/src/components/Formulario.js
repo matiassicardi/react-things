@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-
 import styled from '@emotion/styled'
+import { obtenerDiferenciaYear, calculaMarca, obtenerPlan } from '../helper';
 
 // import PropTypes from 'prop-types';
 
@@ -84,19 +84,26 @@ const Formulario = () => {
 
         guardarError(false);
 
+        //Base del costo
+
+        let resultado = 2000;
+
         //obtener la diferencia de años
+        const diferencia = obtenerDiferenciaYear(year);
 
         //restar 3% por cada año de antiguedad
+        resultado -= ((resultado / 100) * 3) * diferencia;
 
         //incrementar 15% por Americano
-
         //incrementar 5% por Asiatico
-
         //incrementar 30% por Europeo
+        resultado = calculaMarca(marca) * resultado;
+        console.log(resultado);
 
         //si es básico aumenta 20%
-
         //si es completo aumenta 50%
+        const incrementoPlan = obtenerPlan(plan);
+        resultado = parseFloat( incrementoPlan * resultado ).toFixed(2);
 
         //total
     }
