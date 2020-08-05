@@ -1,8 +1,8 @@
 # Insurance Quote Generator
 
-This exercise was done during the React course taught by Udemy. 
+This exercise was done during the React course taught by Udemy.
 
-The project use [Emotion Styled Components](https://emotion.sh/docs/introduction)
+The project use [Emotion Styled Components](https://emotion.sh/docs/introduction) and [React Transition Group](https://github.com/reactjs/react-transition-group)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled'
 import { obtenerDiferenciaYear, calculaMarca, obtenerPlan } from '../helper';
 
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const color = '#264578';
 
@@ -51,7 +51,7 @@ const TextError = styled.div `
     text-align: center;
 `;
 
-const Formulario = ({guardarResumen}) => {
+const Formulario = ({guardarResumen, guardarCargando}) => {
 
     const [ datos, guardarDatos ] = useState({
         marca: '',
@@ -105,11 +105,21 @@ const Formulario = ({guardarResumen}) => {
         resultado = parseFloat( incrementoPlan * resultado ).toFixed(2);
         console.log(resultado);
 
+        guardarCargando(true);
+
+        setTimeout( () => {
+            guardarCargando(false);
+            guardarResumen({
+                cotizacion: resultado,
+                datos: datos
+            });
+        }, 2000);
+
         //total
-        guardarResumen({
-            cotizacion: resultado,
-            datos: datos
-        })
+        // guardarResumen({
+        //     cotizacion: resultado,
+        //     datos: datos
+        // })
     }
 
     return (
@@ -170,9 +180,10 @@ const Formulario = ({guardarResumen}) => {
     );
 }
 
-// Formulario.propTypes = {
-//     presupuesto: PropTypes.number.isRequired,
-//     restante: PropTypes.number.isRequired
-// }
-    
-export default Formulario; 
+Formulario.propTypes = {
+    guardarResumen: PropTypes.func.isRequired,
+    guardarCargando: PropTypes.func.isRequired
+
+}
+
+export default Formulario;

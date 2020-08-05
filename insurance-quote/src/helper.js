@@ -28,3 +28,7 @@ export function calculaMarca(marca) {
 export function obtenerPlan(plan) {
     return (plan === 'basico') ? 1.2 : 1.5;
 }
+
+export function uppercasing(text) {
+    return text.charAt(0).toUpperCase() + text.slice(1);
+}

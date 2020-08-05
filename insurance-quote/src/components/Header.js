@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled'
 
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const ContenedorHeader = styled.header `
     background-color: #26c6da;
@@ -25,9 +25,9 @@ const Header = ({titulo}) => {
     );
 }
 
-// Header.propTypes = {
-//     presupuesto: PropTypes.number.isRequired,
-//     restante: PropTypes.number.isRequired
-// }
-    
-export default Header; 
+Header.propTypes = {
+    titulo: PropTypes.string.isRequired
+    // restante: PropTypes.number.isRequired
+}
+
+export default Header;
